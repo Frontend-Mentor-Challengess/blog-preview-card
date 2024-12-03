@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+// *variables*
+$yellow: #f4d04e;
+$white: #ffffff;
+$gray500: #6b6b6b;
+$gray950: #111111;
+
+$weight500: 500;
+$weight800: 800;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+body {
+  background-color: $yellow;
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .container {
+      background-color: $white;
+      width: 30vw;
+      height: fit-content;
+      display: flex;
+      flex-flow: column;
+      gap: 2vh;
+      padding: 1.6rem;
+      flex-shrink: 0;
+      border-radius: 1.3rem;
+      box-shadow: 0.75rem 0.75rem 0 0 $gray950;
+      // margin-bottom: 15px;
+
+      .article-img {
+        border-radius: 1rem;
+      }
+
+      .title2 {
+        background-color: $yellow;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        color: $gray950;
+        font-weight: $weight800;
+      }
+
+      .title {
+        font-weight: $weight800;
+        color: $gray950;
+        cursor: pointer;
+
+        &:hover {
+          color: $yellow;
+          transition: 300ms ease-in-out;
+        }
+      }
+      .text {
+        color: $gray500;
+        font-weight: $weight500;
+      }
+
+      figure {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+
+        figcaption {
+          color: $gray950;
+          font-weight: $weight800;
+          font-size: large;
+        }
+      }
+    }
+  }
+  footer {
+    margin-top: 2%;
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    main {
+      .container {
+        width: 50vw;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
